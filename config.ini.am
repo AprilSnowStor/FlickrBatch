@@ -1,0 +1,85 @@
+[Config]
+################################################################################
+# The user id
+################################################################################
+USER_ID = 'xxxxxxxxxxxx'
+
+################################################################################
+#   Flickr settings
+################################################################################
+#   Set your own API key and secret message
+#   Go to http://www.flickr.com/services/apps/create/apply and apply for an API key
+#
+FLICKR = {
+        "title"                 : "",
+        "description"           : "",
+        "tags"                  : "auto-upload",
+        "is_public"             : "0",
+        "is_friend"             : "0",
+        "is_family"             : "0",
+        "api_key"               : u'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx',
+        "api_secret"            : u'xxxxxxxxxxxxxxxx'
+        }
+
+################################################################################
+# The folder which contains all the pictures to synchronize
+################################################################################
+PICTURE_FOLDER_PATH = 'xxxxxxxxxxxxx'
+
+################################################################################
+# The file extensions to synchronize
+################################################################################
+PICTURE_EXTENSIONS = ('.JPG', '.jpg', '.PNG', '.png', '.AVI', '.avi', '.MOV', '.mov', '.MPG', '.mpg', '.MP4', '.mp4', '.3GP', '.3gp')
+
+################################################################################
+# A regular expression to select all your different subdolders
+# insed the main folder.
+# You can just set it to r'' if you want to select all your subfolders.
+################################################################################
+SUBFOLDERS_REGEXP = r'^[01]\d-((0[1-9])|(1[0-2]))$'
+SUBFOLDERS_REGEXP = r''
+
+################################################################################
+#   List of filename regular expressions you wish to ignore
+#   Regex is used to search the filename (as opposed to matching it completely)
+################################################################################
+IGNORED_REGEX = []
+
+
+
+################################################################################
+#   File we keep the history of uploaded files in.
+################################################################################
+DB_PATH = os.path.join(os.environ['HOME'], '.config/flickrbatch/flickrdb')
+
+################################################################################
+#   Location of file where we keep the lock for multiple running processes from happening
+################################################################################
+#LOCK_PATH = os.path.join(os.path.dirname(sys.argv[0]), ".flickrlock")
+LOCK_PATH = os.path.join(os.environ['HOME'], '.config/flickrbatch/.flickrlock')
+
+################################################################################
+#   List of folder names you don't want to parse
+################################################################################
+EXCLUDED_FOLDERS = ["@eaDir","#recycle",".picasaoriginals","_ExcludeSync","Corel Auto-Preserve","Originals","Automatisch beibehalten von Corel"]
+
+################################################################################
+#   RAW File Conversion (optional)
+################################################################################
+CONVERT_RAW_FILES = False
+RAW_EXT = ["3fr", "ari", "arw", "bay", "crw", "cr2", "cap", "dcs", "dcr", "dng", "drf", "eip", "erf", "fff", "iiq", "k25", "kdc", "mdc", "mef", "mos", "mrw", "nef", "nrw", "obm", "orf", "pef", "ptx", "pxn", "r3d", "raf", "raw", "rwl", "rw2", "rwz", "sr2", "srf", "srw", "x3f"]
+RAW_TOOL_PATH = "/volume1/photo/Image-ExifTool-9.69/"
+
+################################################################################
+#   Files greater than this value won't be uploaded (1Mo = 1000000)
+################################################################################
+FILE_MAX_SIZE = 50000000
+
+################################################################################
+# Counter for uploading, replacing attempts
+################################################################################
+# Max number of failed uploads for a single photo before
+# uploading the next one.
+MAX_RETRIES = 3
+# Max number of consecutive failed uploads before exit.
+MAX_CONSECUTIVE_ERRORS = 5

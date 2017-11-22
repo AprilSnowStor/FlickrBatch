@@ -1,0 +1,9 @@
+.flickrlock
+Screenshots/
+config.ini
+*.old
+*.save
+out
+tests/
+out*
+utils/
