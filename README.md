@@ -22,7 +22,7 @@ Copy file `config.ini.am` to `config.ini` and edit the following lines:
     Examples:
 
         PICTURE_FOLDER_PATH = os.path.join(os.environ['HOME'], 'Pictures')
-        PICTURE_FOLDER_PATH = './Screenshots/')
+        PICTURE_FOLDER_PATH = './Screenshots/'
 
 * Setup your `api_key` and `api_secret` in dictionnary **`FLICKR`**
 
